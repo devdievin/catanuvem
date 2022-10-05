@@ -1,0 +1,11 @@
+.d-flex {
+    display: flex;
+}
+
+.d-block {
+    display: block;
+}
+
+.mr-1 {
+    margin-right: 1rem;
+}

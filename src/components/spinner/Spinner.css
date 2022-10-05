@@ -1,0 +1,27 @@
+.screen-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner-load {
+    width: 10rem;
+    height: 10rem;
+    border-top: 7px solid #000;
+    border-right: 5px solid #000;
+    border-left: 2px solid #000;
+    border-radius: 50%;
+    animation: rotate 800ms linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
