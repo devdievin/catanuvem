@@ -7,7 +7,7 @@ import './App.css';
 const App = (props: any) => {
   return (
     <Router>
-      <Header logo="Catanuvem" />
+      <Header logo="CATANUVEM" />
       <Routes />
     </Router>
   );
