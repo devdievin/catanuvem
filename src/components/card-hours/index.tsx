@@ -1,17 +1,15 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
 
-import styles from './CardToday.module.css';
+import styles from './CardHours.module.css';
 
-const CardToday = ({ location, data }: any) => {
+const CardHours = ({ data }: any) => {
     return (
-        <Card>
-            <Card.Body>
-                <h5 className={'titleCard'}>O tempo para hoje em <span>{location}</span></h5>
-                <div className={styles.cardContainer}>
-                    {data.map((element: any, index: number) => (
-                        <div className={styles.cardContent} key={index}>
-                            <p>{element.period}</p>
+        <>
+            <div className={styles.mainCards}>
+                {data.map((element: any, index: number) => (
+                    <div className={styles.card} key={index}>
+                        <div className={styles.cardContent}>
+                            <p>{element.hour}</p>
                             <p>{element.temperature}</p>
                             <img className={'cardIconWeather'} src="/icons/icon-cloud-2.svg" alt="icon test" width={64} height={64} />
                             <p>
@@ -21,11 +19,11 @@ const CardToday = ({ location, data }: any) => {
                                 {element.rainProbability}
                             </p>
                         </div>
-                    ))}
-                </div>
-            </Card.Body>
-        </Card>
+                    </div>
+                ))}
+            </div>
+        </>
     );
 }
 
-export default CardToday;
+export default CardHours;

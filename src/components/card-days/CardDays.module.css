@@ -1,0 +1,41 @@
+#cardDays {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.cardContainer {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.cardContent {
+    width: calc(100% / 5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardContent:not(:first-child) {
+    border-left: 1px solid gainsboro;
+}
+
+.cardContent p {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.cardContent p:nth-child(1) {
+    font-weight: 600;
+}
+
+.cardContent p:nth-child(2) {
+    font-size: 22px;
+    font-weight: 400;
+    color: #df2828;
+    margin-bottom: 0;
+}
+
+.cardContent p:nth-child(3) {
+    color: #7a7a7a;
+}

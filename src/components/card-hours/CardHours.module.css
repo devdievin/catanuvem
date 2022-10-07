@@ -1,0 +1,43 @@
+.mainCards {
+    display: flex;
+}
+
+.card {
+    width: 228px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.2);
+    border-width: 1px 0px 0px 1px;
+    border-style: solid;
+    border-color: #e3e3e3;
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card:first-child {
+    border-radius: 10px 0px 0px 10px;
+}
+
+.card:last-child {
+    border-radius: 0px 10px 10px 0px;
+}
+
+.cardContent {
+    text-align: center;
+    margin: auto;
+}
+
+.cardContent p {
+    margin-bottom: 0.5rem;
+}
+
+.cardContent p:nth-child(1) {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.cardContent p:nth-child(2) {
+    font-size: 28px;
+}

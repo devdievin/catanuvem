@@ -80,3 +80,17 @@ body {
   font-family: "Inter";
   font-weight: 400;
 }
+
+.titleCard {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.cardIconWeather {
+  margin-bottom: 0.5rem;
+}
+
+.navbar-fill {
+  background-color: rgba(0, 0, 0, 0.75);
+  transition: all 0.3s ease-in-out;
+}

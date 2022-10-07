@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from '../routes';
 import Header from '../components/header';
+import Footer from '../components/footer';
 import './App.css';
 
 const App = (props: any) => {
@@ -9,6 +10,7 @@ const App = (props: any) => {
     <Router>
       <Header logo="CATANUVEM" />
       <Routes />
+      <Footer />
     </Router>
   );
 }
