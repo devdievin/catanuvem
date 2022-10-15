@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { formatDateZero, getDayOfWeek, getMonthName } from '../../utils/tools';
-import { Card, Col, Row } from 'react-bootstrap';
 
 import Spinner from '../../components/spinner';
 import SectionMain from '../../components/section-main';
@@ -12,6 +11,8 @@ import CardToday from '../../components/card-today';
 import CardDays from '../../components/card-days';
 import CardHours from '../../components/card-hours';
 import CardDetails from '../../components/card-details';
+import CardNews from '../../components/card-news';
+import CardInfo from '../../components/card-info';
 
 const URL = "https://api-catanuvem.vercel.app/weather/today/loc";
 const URL_HOURS = "https://api-catanuvem.vercel.app/weather/hours/loc";
@@ -19,8 +20,8 @@ const URL_DAYS = "https://api-catanuvem.vercel.app/weather/days/loc";
 
 const Home = (props: any) => {
   const [isLoading, setIsLoading] = useState(true);
-  const [latitude, setLatitude] = useState(0);
-  const [longitude, setLongitude] = useState(0);
+  const [latitude, setLatitude] = useState<number | null>(null);
+  const [longitude, setLongitude] = useState<number | null>(null);
   const [dayAndMonth, setDayAndMonth] = useState("");
   const [dayOfWeek, setDayOfWeek] = useState("");
   const [weather, setWeather] = useState<any | null>(null);
@@ -30,7 +31,16 @@ const Home = (props: any) => {
   useEffect(() => {
     getGeolocation();
     getDatetime();
-  });
+    if (latitude !== null && longitude !== null) {
+      // console.log('geolocalização mudou');
+      getWeather(latitude, longitude).then((rs: any) => {
+        setWeather(rs.today);
+        setWeatherHours(rs.hours);
+        setWeatherDays(rs.days);
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [latitude, longitude]);
 
   const getGeolocation = () => {
     if (navigator.geolocation) {
@@ -44,13 +54,11 @@ const Home = (props: any) => {
   const showPosition = (position: any) => {
     setLatitude(position.coords.latitude);
     setLongitude(position.coords.longitude);
-    getWeather();
   };
 
   const errorPosition = (error: any) => {
     if (error.code === error.PERMISSION_DENIED) {
       setDefaultCoordinates();
-      getWeather();
     }
   }
 
@@ -60,15 +68,13 @@ const Home = (props: any) => {
     setLongitude(-47.9292);
   }
 
-  const getWeather = async () => {
+  const getWeather = async (lat: number, lon: number) => {
     try {
-      const response = await axios.get(`${URL}/${latitude}&${longitude}`);
-      setWeather(response.data);
-      const other_response = await axios.get(`${URL_DAYS}/${latitude}&${longitude}`);
-      setWeatherDays(other_response.data);
-      const other_response2 = await axios.get(`${URL_HOURS}/${latitude}&${longitude}`);
-      setWeatherHours(other_response2.data);
-      if (weather !== null && weatherDays !== null && weatherHours !== null) setIsLoading(false);
+      const today_response = await axios.get(`${URL}/${lat}&${lon}`);
+      const days_response = await axios.get(`${URL_DAYS}/${lat}&${lon}`);
+      const hours_response = await axios.get(`${URL_HOURS}/${lat}&${lon}`);
+      if (hours_response) setIsLoading(false);
+      return { today: today_response.data, days: days_response.data, hours: hours_response.data };
     } catch (error) {
       console.error(error);
     }
@@ -95,7 +101,8 @@ const Home = (props: any) => {
                   </div>
 
                   <div className={styles.iconContent}>
-                    <img src={"/icons/icon-cloud-test.svg"} alt="icone teste" width={200} height={'auto'} />
+                    {/* <img src={weather.icon.src} alt={weather.icon.name} width={220} height={'auto'} /> */}
+                    <img src={weather.icon.src} alt={weather.icon.name} className={styles.iconWeather} />
                   </div>
 
                   <div className={styles.temperatureContent}>
@@ -105,64 +112,24 @@ const Home = (props: any) => {
                 </div>
 
                 {/* Card info */}
-                <div className={styles.cardInfo}>
-                  <Row>
-                    <Col className={styles.colItem}>
-                      <div className='text-center'>
-                        <p>Probabilidade de chuva</p>
-                        <p>{weather.rainProbability}</p>
-                      </div>
-                    </Col>
+                <CardInfo data={weather} />
 
-                    <Col className={styles.colItem}>
-                      <div className='text-center'>
-                        <p>Vento</p>
-                        <p>{weather.wind}</p>
-                      </div>
-                    </Col>
-
-                    <Col className={styles.colItem}>
-                      <div className='text-center'>
-                        <p>Umidade</p>
-                        <p>{weather.humidity}</p>
-                      </div>
-                    </Col>
-
-                    <Col className={styles.colItem}>
-                      <div className='text-center'>
-                        <p>Sensação térmica</p>
-                        <p>{weather.thermalSensation}</p>
-                      </div>
-                    </Col>
-                  </Row>
-                </div>
-
-                {weatherHours.hoursForecast && <CardHours data={weatherHours.hoursForecast} />}
+                {weatherHours && <CardHours data={weatherHours.hoursForecast} />}
               </SectionMain>
 
               <ContainerCustom>
                 <div className={styles.gridContainer}>
-                  {/* Card relatório detalhado */}
                   <CardDetails data={weather} />
 
-                  {/* Card notícias */}
-                  <Card id='catanews_card'>
-                    <Card.Body>
-                      <h5><strong>CataNews</strong></h5>
-                      <p>O que está acontecendo no Brasil hoje?</p>
-                    </Card.Body>
-                  </Card>
+                  <CardNews />
 
-                  {/* Card previsão para hoje */}
-                  {weather.todayForecast &&
+                  {weather &&
                     <CardToday location={weather.location} data={weather.todayForecast} />
                   }
 
-                  {/* Card previsão para os próximos cinco dias */}
-                  {weatherDays.forecastNextDays &&
+                  {weatherDays &&
                     <CardDays location={weather.location} data={weatherDays.forecastNextDays} />
                   }
-
                 </div>
               </ContainerCustom>
             </>

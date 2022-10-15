@@ -1,3 +1,12 @@
+/* #cardToday {
+    padding: 0;
+    padding-bottom: 0.5rem;
+} */
+
+/* .cardHeader {
+    padding: 1rem 1rem 0;
+} */
+
 .cardContainer {
     display: flex;
     margin-top: 1rem;
@@ -28,4 +37,16 @@
     font-size: 22px;
     font-weight: 400;
     color: #7a7a7a;
+}
+
+@media only screen and (max-width: 600px) {
+    #cardToday {
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+    }
+
+    .cardContainer {
+        width: 560px;
+        flex-wrap: nowrap;
+    }
 }

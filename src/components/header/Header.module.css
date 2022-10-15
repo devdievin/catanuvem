@@ -7,7 +7,7 @@
 .container {
     width: 100%;
     display: flex;
-    padding: 0 90px;
+    padding: 0 45px;
     justify-content: space-between;
 }
 
@@ -21,4 +21,22 @@
 
 .navLinks:hover {
     color: black;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+        display: flex;
+        padding: 0 0.5rem;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .container {
+        width: 100%;
+        display: flex;
+        padding: 0 90px;
+        justify-content: space-between;
+    }
 }

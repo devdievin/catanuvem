@@ -1,5 +1,6 @@
 .mainCards {
     display: flex;
+    width: 100%;
 }
 
 .card {
@@ -40,4 +41,27 @@
 
 .cardContent p:nth-child(2) {
     font-size: 28px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .mainCards {
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .card {
+        /* width: max-content; */
+        height: 200px;
+        padding: 10px 40px;
+    }
+
+    .cardContent p:nth-child(1) {
+        font-size: 18px;
+    }
+
+    .cardContent p:nth-child(2) {
+        font-size: 24px;
+    }
 }

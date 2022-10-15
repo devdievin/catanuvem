@@ -27,7 +27,7 @@ const Header = ({ logo }: Props) => {
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
                         <Nav>
-                            <a href="#search" className={styles.navLinks}>Buscar Cidades</a>
+                            {/* <a href="#search" className={styles.navLinks}>Buscar Cidades</a> */}
                             <a href="#help" className={styles.navLinks}>Ajuda</a>
                         </Nav>
                     </Navbar.Collapse>

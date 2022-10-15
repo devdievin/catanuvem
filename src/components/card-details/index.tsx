@@ -5,72 +5,98 @@ const CardDetails = ({ data }: any) => {
     return (
         <Card>
             <Card.Body id={styles.cardDetails}>
-                <h5 className={'titleCard'}>Detalhes do clima hoje em <span>{data.location}</span></h5>
-                <h1>{data.temperature}</h1>
+                <div className={styles.titleWrapper}>
+                    <h5 className={'titleCard'}>Detalhes do clima hoje em <span>{data.location}</span></h5>
+                    <h1>{data.temperature}</h1>
+                </div>
 
                 <Row className={styles.rowDetails}>
-                    <Col className={`${styles.cardItemCol} me-2`}>
-                        <span >Condição:</span>
-                        <span>{data.condition}</span>
+                    <Col xs={12} md={6} className={`${styles.cardItemCol}`}>
+                        <div className={styles.itemWrapper}>
+                            <span >Condição:</span>
+                            <span>{data.condition}</span>
+                        </div>
                     </Col>
-                    <Col className={`${styles.cardItemCol} ms-2`}>
-                        <span>Ponto de Orvalho:</span>
-                        <span>{data.dewPoint}</span>
+                    <Col xs={12} md={6} className={`${styles.cardItemCol}`}>
+                        <div className={styles.itemWrapper}>
+                            <span >Umidade:</span>
+                            <span>{data.humidity}</span>
+                        </div>
                     </Col>
                 </Row>
 
                 <Row className={styles.rowDetails}>
-                    <Col className={`${styles.cardItemCol} me-2`}>
-                        <span >Probabilidade de chuva:</span>
-                        <span>{data.rainProbability}</span>
+                    <Col xs={12} md={6} className={`${styles.cardItemCol}`}>
+                        <div className={styles.itemWrapper}>
+                            <span >Probabilidade de chuva:</span>
+                            <span>{data.precipitation}</span>
+                        </div>
                     </Col>
-                    <Col className={`${styles.cardItemCol} ms-2`}>
-                        <span>Visibilidade:</span>
-                        <span>{data.visibility}</span>
-                    </Col>
-                </Row>
-
-                <Row className={styles.rowDetails}>
-                    <Col className={`${styles.cardItemCol} me-2`}>
-                        <span >Máx./Mín:</span>
-                        {data.climateVariation && <span>{data.climateVariation.max}/{data.climateVariation.min}</span>}
-                    </Col>
-                    <Col className={`${styles.cardItemCol} ms-2`}>
-                        <span>Fase da lua:</span>
-                        <span>{data.moon}</span>
+                    <Col xs={12} md={6} className={`${styles.cardItemCol}`}>
+                        <div className={styles.itemWrapper}>
+                            <span>Visibilidade:</span>
+                            <span>{data.visibility}</span>
+                        </div>
                     </Col>
                 </Row>
 
                 <Row className={styles.rowDetails}>
-                    <Col className={`${styles.cardItemCol} me-2`}>
-                        <span >Sensação térmica:</span>
-                        <span>{data.thermalSensation}</span>
+                    <Col xs={12} md={6} className={`${styles.cardItemCol}`}>
+                        <div className={styles.itemWrapper}>
+                            <span >Máx./Mín:</span>
+                            {data.climateVariation && <span>{data.climateVariation.max}/{data.climateVariation.min}</span>}
+                        </div>
                     </Col>
-                    <Col className={`${styles.cardItemCol} ms-2`}>
-                        <span>Qualidade do ar:</span>
-                        {data.airQuality && <span>{data.airQuality.quality}</span>}
-                    </Col>
-                </Row>
-
-                <Row className={styles.rowDetails}>
-                    <Col className={`${styles.cardItemCol} me-2`}>
-                        <span >Vento:</span>
-                        <span>{data.wind}</span>
-                    </Col>
-                    <Col className={`${styles.cardItemCol} ms-2`}>
-                        <span>Nascer do sol:</span>
-                        {data.sun && <span>{data.sun.sunrise}</span>}
+                    <Col xs={12} md={6} className={`${styles.cardItemCol}`}>
+                        <div className={styles.itemWrapper}>
+                            <span>Fase da lua:</span>
+                            <span>{data.moon}</span>
+                        </div>
                     </Col>
                 </Row>
 
                 <Row className={styles.rowDetails}>
-                    <Col className={`${styles.cardItemCol} me-2`}>
-                        <span >Umidade:</span>
-                        <span>{data.humidity}</span>
+                    <Col xs={12} md={6} className={`${styles.cardItemCol}`}>
+                        <div className={styles.itemWrapper}>
+                            <span >Sensação térmica:</span>
+                            <span>{data.thermalSensation}</span>
+                        </div>
                     </Col>
-                    <Col className={`${styles.cardItemCol} ms-2`}>
-                        <span>Pôr do sol:</span>
-                        {data.sun && <span>{data.sun.sunset}</span>}
+                    <Col xs={12} md={6} className={`${styles.cardItemCol}`}>
+                        <div className={styles.itemWrapper}>
+                            <span>Ponto de Orvalho:</span>
+                            <span>{data.dewPoint}</span>
+                        </div>
+                    </Col>
+                </Row>
+
+                <Row className={styles.rowDetails}>
+                    <Col xs={12} md={6} className={`${styles.cardItemCol}`}>
+                        <div className={styles.itemWrapper}>
+                            <span >Vento:</span>
+                            <span>{data.wind}</span>
+                        </div>
+                    </Col>
+                    <Col xs={12} md={6} className={`${styles.cardItemCol}`}>
+                        <div className={styles.itemWrapper}>
+                            <span>Qualidade do ar:</span>
+                            {data.airQuality && <span>{data.airQuality.quality}</span>}
+                        </div>
+                    </Col>
+                </Row>
+
+                <Row className={styles.rowDetails}>
+                    <Col xs={12} md={6} className={`${styles.cardItemCol}`}>
+                        <div className={styles.itemWrapper}>
+                            <span>Nascer do sol:</span>
+                            {data.sun && <span>{data.sun.sunrise}</span>}
+                        </div>
+                    </Col>
+                    <Col xs={12} md={6} className={`${styles.cardItemCol}`}>
+                        <div className={styles.itemWrapper}>
+                            <span>Pôr do sol:</span>
+                            {data.sun && <span>{data.sun.sunset}</span>}
+                        </div>
                     </Col>
                 </Row>
 
