@@ -32,7 +32,6 @@ const Home = (props: any) => {
     getGeolocation();
     getDatetime();
     if (latitude !== null && longitude !== null) {
-      // console.log('geolocalização mudou');
       getWeather(latitude, longitude).then((rs: any) => {
         setWeather(rs.today);
         setWeatherHours(rs.hours);
@@ -101,7 +100,6 @@ const Home = (props: any) => {
                   </div>
 
                   <div className={styles.iconContent}>
-                    {/* <img src={weather.icon.src} alt={weather.icon.name} width={220} height={'auto'} /> */}
                     <img src={weather.icon.src} alt={weather.icon.name} className={styles.iconWeather} />
                   </div>
 
