@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { formatDateZero, getDayOfWeek, getMonthName } from '../../utils/tools';
 
-import Spinner from '../../components/spinner';
+import Loading from '../../components/loading';
 import SectionMain from '../../components/section-main';
 import ContainerCustom from '../../components/container';
 
@@ -13,6 +13,8 @@ import CardHours from '../../components/card-hours';
 import CardDetails from '../../components/card-details';
 import CardNews from '../../components/card-news';
 import CardInfo from '../../components/card-info';
+import Header from '../../components/header';
+import Footer from '../../components/footer';
 
 const URL = "https://api-catanuvem.vercel.app/weather/today/loc";
 const URL_HOURS = "https://api-catanuvem.vercel.app/weather/hours/loc";
@@ -89,6 +91,7 @@ const Home = (props: any) => {
     <React.Fragment>
       {!isLoading ?
         <React.Fragment>
+          <Header logo="CATANUVEM" />
           {weather &&
             <>
               <SectionMain>
@@ -132,9 +135,10 @@ const Home = (props: any) => {
               </ContainerCustom>
             </>
           }
+          <Footer />
         </React.Fragment>
         :
-        <Spinner />
+        <Loading />
       }
     </React.Fragment>
   );

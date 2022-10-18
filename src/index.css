@@ -5,7 +5,7 @@
   --container-lg-width: 1140px;
 }
 
-@font-face {
+/* @font-face {
   font-family: "Inter";
   src: url("../public/fonts/Inter/Inter-Black.ttf");
   font-weight: 900;
@@ -66,7 +66,7 @@
   src: url("../public/fonts/Inter/Inter-Thin.ttf");
   font-weight: 100;
   font-display: swap;
-}
+} */
 
 * {
   margin: 0;
@@ -101,7 +101,8 @@ body {
 }
 
 .navbar-fill {
-  background-color: rgba(0, 0, 0, 0.75);
+  /* background-color: rgba(0, 0, 0, 0.75); */
+  background-color: #282b30;
   transition: all 0.3s ease-in-out;
 }
 
