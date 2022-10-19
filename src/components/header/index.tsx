@@ -62,12 +62,16 @@ const Header = ({ logo }: Props) => {
                     </div>
 
                     <div className={styles.sidebar} id={'sidebarNav'}>
-                        <div className={styles.side_link_group}>
-                            <Link to={'#search'} className={styles.side_link}>Buscar cidades</Link>
-                        </div>
-                        <div className={styles.side_link_group}>
-                            <Link to={'#help'} className={styles.side_link}>Ajuda</Link>
-                        </div>
+                        <Link to={'#search'} className={styles.side_link_group}>
+                            <div className={styles.side_link}>
+                                Buscar cidades
+                            </div>
+                        </Link>
+                        <Link to={'#help'} className={styles.side_link_group}>
+                            <div className={styles.side_link}>
+                                Ajuda
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </Navbar>

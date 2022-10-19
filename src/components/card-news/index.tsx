@@ -1,28 +1,14 @@
-import React, { useEffect, useState } from "react";
-import axios from 'axios';
-import { Card } from "react-bootstrap";
+import { CardComponent } from "../card";
 
 import styles from './News.module.css';
 
-const URL_NEWS = "https://newsapi.org/v2/top-headlines?country=br&pageSize=7&apiKey=6e50b082a4c64dcc82f46cb34e2f58c8";
-
-const CardNews = (props: any) => {
-    const [dataNews, setDataNews] = useState<any | null>(null);
-
-    useEffect(() => {
-        axios.get(URL_NEWS)
-            .then(response => {
-                // console.log(response.data);
-                setDataNews(response.data);
-            })
-            .catch(error => console.error(error));
-    }, []);
+const CardNews = ({ dataNews }: any) => {
 
     return (
-        <Card id={styles.cardNews}>
-            <Card.Body>
+        <CardComponent id={styles.cardNews}>
+            <div>
                 <h5><strong>CataNews</strong></h5>
-                <p>O que está acontecendo no Brasil hoje?</p>
+                <p>Assuntos manchetes no Brasil hoje:</p>
                 {dataNews &&
                     <div>
                         {dataNews.articles.map((element: any, index: number) => (
@@ -39,8 +25,8 @@ const CardNews = (props: any) => {
                         ))}
                     </div>
                 }
-            </Card.Body>
-        </Card >
+            </div>
+        </CardComponent >
     );
 }
 

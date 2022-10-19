@@ -51,6 +51,10 @@
     row-gap: 1rem;
 }
 
+.helpLabel {
+    display: none;
+}
+
 @media only screen and (max-width: 600px) {
     .mainData {
         padding-top: 1rem;
@@ -75,7 +79,14 @@
     }
 
     .conditionText {
-        font-size: 22px;
+        font-size: 1.25rem;
+    }
+
+    .helpLabel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0.25rem 0;
     }
 }
 
@@ -101,7 +112,7 @@
     }
 }
 
-@media only screen and (min-width: 1600px) {
+@media only screen and (min-width: 1400px) {
     .mainData {
         margin-top: 6rem;
         margin-bottom: 2rem;

@@ -1,4 +1,4 @@
-.titleWrapper {
+.temperatureWrapper {
     padding: 0 0.75rem;
 }
 
@@ -8,7 +8,7 @@
 
 #cardDetails {
     height: max-content;
-    padding: 1rem 0.25rem;
+    padding: 0 0.25rem 1rem;
 }
 
 .cardItemCol {

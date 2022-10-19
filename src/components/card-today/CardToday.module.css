@@ -1,15 +1,6 @@
-/* #cardToday {
-    padding: 0;
-    padding-bottom: 0.5rem;
-} */
-
-/* .cardHeader {
-    padding: 1rem 1rem 0;
-} */
-
 .cardContainer {
     display: flex;
-    margin-top: 1rem;
+    flex-wrap: nowrap;
 }
 
 .cardContent {
@@ -40,13 +31,8 @@
 }
 
 @media only screen and (max-width: 600px) {
-    #cardToday {
-        overflow-x: scroll;
-        scroll-behavior: smooth;
-    }
-
     .cardContainer {
+        display: flex;
         width: 560px;
-        flex-wrap: nowrap;
     }
 }

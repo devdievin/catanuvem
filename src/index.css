@@ -81,21 +81,6 @@ body {
   font-weight: 400;
 }
 
-.card-header-custom {
-  padding: 1rem 1rem 0;
-}
-
-.titleCard {
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-bottom: 0;
-}
-
-.card-body-custom {
-  padding: 0;
-  padding-bottom: 0.5rem;
-}
-
 .cardIconWeather {
   margin-bottom: 0.5rem;
 }

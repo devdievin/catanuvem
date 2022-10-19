@@ -1,15 +1,15 @@
-import { Card, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
+import { Card } from '../card';
+
 import styles from './CardDetails.module.css';
 
 const CardDetails = ({ data }: any) => {
     return (
-        <Card>
-            <Card.Body id={styles.cardDetails}>
-                <div className={styles.titleWrapper}>
-                    <h5 className={'titleCard'}>Detalhes do clima hoje em <span>{data.location}</span></h5>
+        <Card titleHeader={'Detalhes do clima hoje em'} location={data.location} carrousel={false}>
+            <div id={styles.cardDetails}>
+                <div className={styles.temperatureWrapper}>
                     <h1>{data.temperature}</h1>
                 </div>
-
                 <Row className={styles.rowDetails}>
                     <Col xs={12} md={6} className={`${styles.cardItemCol}`}>
                         <div className={styles.itemWrapper}>
@@ -100,7 +100,7 @@ const CardDetails = ({ data }: any) => {
                     </Col>
                 </Row>
 
-            </Card.Body>
+            </div>
         </Card>
     );
 }

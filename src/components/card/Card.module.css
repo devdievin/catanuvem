@@ -1,0 +1,62 @@
+.card {
+  min-width: 100%;
+  background-color: #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.175);
+  border-radius: 5px;
+  box-shadow: -6px 6px 10px rgba(0, 0, 0, 0.25);
+}
+
+.cardHeader {
+  padding: 1rem 1rem;
+}
+
+.titleHeader {
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.titleHeader span {
+  font-weight: 600;
+}
+
+.cardBody {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  padding: 0;
+}
+
+.helpLabel {
+  display: none;
+}
+
+.cardContainer {
+  padding: 1rem 0.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .cardBody {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+  .cardBody::-webkit-scrollbar {
+    display: none;
+  }
+  .titleHeader {
+    font-size: 1rem;
+  }
+  .helpLabel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.25rem 0;
+  }
+  .helpLabel p {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+/*# sourceMappingURL=Card.module.css.map */

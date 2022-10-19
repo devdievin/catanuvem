@@ -19,6 +19,7 @@ import Footer from '../../components/footer';
 const URL = "https://api-catanuvem.vercel.app/weather/today/loc";
 const URL_HOURS = "https://api-catanuvem.vercel.app/weather/hours/loc";
 const URL_DAYS = "https://api-catanuvem.vercel.app/weather/days/loc";
+const URL_NEWS = "https://newsapi.org/v2/top-headlines?country=br&pageSize=7&apiKey=6e50b082a4c64dcc82f46cb34e2f58c8";
 
 const Home = (props: any) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,10 +30,12 @@ const Home = (props: any) => {
   const [weather, setWeather] = useState<any | null>(null);
   const [weatherHours, setWeatherHours] = useState<any | null>(null);
   const [weatherDays, setWeatherDays] = useState<any | null>(null);
+  const [news, setNews] = useState<any | null>(null);
 
   useEffect(() => {
     getGeolocation();
     getDatetime();
+    getCatanews();
     if (latitude !== null && longitude !== null) {
       getWeather(latitude, longitude).then((rs: any) => {
         setWeather(rs.today);
@@ -87,6 +90,16 @@ const Home = (props: any) => {
     setDayOfWeek(getDayOfWeek(date.getDay()));
   }
 
+  const getCatanews = async () => {
+    try {
+      const response = await axios.get(URL_NEWS);
+      setNews(response.data);
+    } catch (error) {
+      console.error("Error", error);
+
+    }
+  }
+
   return (
     <React.Fragment>
       {!isLoading ?
@@ -116,13 +129,16 @@ const Home = (props: any) => {
                 <CardInfo data={weather} />
 
                 {weatherHours && <CardHours data={weatherHours.hoursForecast} />}
+                <div className={styles.helpLabel}>
+                  <span>&larr; Arrasta &rarr;</span>
+                </div>
               </SectionMain>
 
               <ContainerCustom>
                 <div className={styles.gridContainer}>
                   <CardDetails data={weather} />
 
-                  <CardNews />
+                  <CardNews dataNews={news} />
 
                   {weather &&
                     <CardToday location={weather.location} data={weather.todayForecast} />

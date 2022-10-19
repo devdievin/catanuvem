@@ -14,6 +14,7 @@
 .screen-container::before {
     content: "";
     position: absolute;
+    height: 100vh;
     top: 0px;
     right: 0px;
     bottom: 0px;
@@ -79,7 +80,7 @@
 .info-subtitle {
     font-size: 22px;
     font-weight: 300;
-    font-style: italic;
+    /* font-style: italic; */
     text-align: center;
 }
 

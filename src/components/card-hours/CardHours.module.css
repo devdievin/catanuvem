@@ -51,6 +51,10 @@
         -webkit-overflow-scrolling: touch;
     }
 
+    .mainCards::-webkit-scrollbar {
+        display: none;
+    }
+
     .card {
         /* width: max-content; */
         height: 200px;

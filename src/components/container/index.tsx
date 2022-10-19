@@ -1,10 +1,14 @@
-import React from 'react';
-
 import styles from './Container.module.css';
 
-const ContainerCustom = ({ children }: any) => (
-    <div className={styles.container}>
-        {children}
+interface ContainerProps {
+    children: JSX.Element
+}
+
+const ContainerCustom = ({ children }: ContainerProps) => (
+    <div className={styles.backgroundContainer}>
+        <div className={styles.container}>
+            {children}
+        </div>
     </div>
 );
 
