@@ -5,7 +5,7 @@ import styles from './CardDetails.module.css';
 
 const CardDetails = ({ data }: any) => {
     return (
-        <Card titleHeader={'Detalhes do clima hoje em'} location={data.location} carrousel={false}>
+        <Card titleHeader={'Detalhes do clima agora em'} location={data.location} carrousel={false}>
             <div id={styles.cardDetails}>
                 <div className={styles.temperatureWrapper}>
                     <h1>{data.temperature}</h1>

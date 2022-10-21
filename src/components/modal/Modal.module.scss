@@ -1,0 +1,140 @@
+$blueColor: #0f4c8e;
+$secondaryBlue: dodgerblue;
+$whiteColor: #fafafa;
+$blackColor: #1f1f1f;
+
+.modalHeader {
+    margin-bottom: 1rem;
+}
+
+.modalTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+        cursor: pointer;
+    }
+}
+
+.modalBody {
+    background-color: $blueColor;
+    color: $whiteColor;
+    border-radius: 6px;
+}
+
+.modalContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    z-index: 1100;
+}
+
+.modalRecents {
+    h3 {
+        font-size: 18px;
+        font-weight: 300;
+        margin-top: 0.25rem;
+    }
+}
+
+.citiesRecents {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(#fff, 0.3);
+    padding: 4px 10px;
+    // margin-bottom: 1rem;
+
+    div:first-child {
+        display: flex;
+        align-items: center;
+        text-overflow: ellipsis;
+    }
+
+    & > div:nth-child(2) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    p {
+        font-size: 18px;
+        width: max-content;
+        margin-bottom: 0;
+        padding-right: 10px;
+        margin-right: 10px;
+        border-right: 1px solid rgba($color: #ffffff, $alpha: 0.5);
+    }
+}
+
+.modalSearch {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.modalInputGroup {
+    margin-bottom: 0.5rem;
+
+    input {
+        width: 100%;
+        padding: 5px 14px;
+        background-color: $whiteColor;
+        color: $blackColor;
+        border-radius: 20px;
+        border: none;
+        outline: 3px solid transparent;
+    }
+
+    input:focus {
+        outline: 3px solid $secondaryBlue;
+    }
+}
+
+.modalInputIcon {
+    position: relative;
+    top: -30px;
+    left: calc(100% - 34px);
+}
+
+.cardSearchResults {
+    width: 100%;
+    height: 250px;
+    background-color: $whiteColor;
+    color: $blackColor;
+    border-radius: 6px;
+    overflow-y: auto;
+
+    p {
+        padding: 10px 12px;
+        border-bottom: 1px solid rgba($color: #000000, $alpha: 0.3);
+        margin-bottom: 0;
+    }
+
+    p:hover {
+        background-color: #f1f155;
+        font-weight: 600;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .modalContainer {
+        padding: 0.5rem;
+    }
+
+    .modalBody {
+        padding: 12px;
+    }
+}

@@ -36,6 +36,12 @@
     color: black;
 }
 
+.navLinkButton {
+    background: transparent;
+    border: none;
+    width: 100%;
+}
+
 .toggle {
     display: none;
     flex-direction: column;
