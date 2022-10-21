@@ -3,7 +3,7 @@ import axios from 'axios';
 import styles from './Modal.module.css';
 import { Modal } from 'react-bootstrap';
 
-const URL_API = 'http://localhost:4000/city';
+const URL_API = 'https://api-catanuvem.vercel.app/city';
 
 const ModalComponent = (props: any) => {
     const [cityName, setCityName] = useState("");
