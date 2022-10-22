@@ -1,50 +1,47 @@
 .temperatureWrapper {
-    padding: 0 0.75rem;
+  padding: 0 0.75rem;
 }
 
 .rowDetails {
-    width: 100%;
+  width: 100%;
 }
 
 #cardDetails {
-    height: max-content;
-    padding: 0 0.25rem 1rem;
+  height: max-content;
+  padding: 0 0.25rem 1rem;
 }
 
 .cardItemCol {
-    display: flex;
-    justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .itemWrapper {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #e3e3e3;
-}
-
-@media only screen and (max-width: 600px) {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e3e3e3;
 }
 
 @media only screen and (max-width: 767px) {
-    #cardDetails .rowDetails:last-child .cardItemCol:last-child .itemWrapper {
-        padding-bottom: 0;
-        border-bottom: 0;
-    }
+  #cardDetails .rowDetails:last-child .cardItemCol:last-child .itemWrapper {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
 }
-
 @media only screen and (min-width: 768px) {
-    #cardDetails .rowDetails:last-child .itemWrapper {
-        padding-bottom: 0;
-        border-bottom: 0;
-    }
+  #cardDetails .rowDetails:last-child .itemWrapper {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  /* #cardDetails .rowDetails:last-child .itemWrapper {
+      padding-bottom: 0;
+      border-bottom: 0;
+  } */
 }
 
-@media only screen and (min-width: 1200px) {
-    /* #cardDetails .rowDetails:last-child .itemWrapper {
-        padding-bottom: 0;
-        border-bottom: 0;
-    } */
-}
+/*# sourceMappingURL=CardDetails.module.css.map */

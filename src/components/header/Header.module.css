@@ -1,133 +1,121 @@
 .logo {
-    font-weight: 700;
-    font-size: 20px;
-    color: var(--color-primary);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-primary);
 }
 
 .container {
-    width: 100%;
-    display: flex;
-    padding: 0 45px;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  padding: 0 45px;
+  justify-content: space-between;
 }
 
 .nav_group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navLinks {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--color-primary);
-    text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
 }
-
 .navLinks:not(:first-child) {
-    margin-left: 10px;
+  margin-left: 10px;
 }
-
 .navLinks:not(:last-child) {
-    margin-right: 10px;
+  margin-right: 10px;
 }
-
 .navLinks:hover {
-    color: black;
+  color: #ffce3c;
 }
 
 .navLinkButton {
-    background: transparent;
-    border: none;
-    width: 100%;
+  background: transparent;
+  border: none;
+  width: 100%;
 }
 
 .toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-right: 0.25rem;
-    transition: 0.9s;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.25rem;
+  transition: 0.9s;
 }
 
 .closeToggle {
-    display: none;
+  display: none;
 }
 
 .bar_1,
 .bar_2,
 .bar_3 {
-    width: 30px;
-    height: 4px;
-    background-color: var(--color-primary);
-    border-radius: 1px;
-    margin-bottom: 6px;
+  width: 30px;
+  height: 4px;
+  background-color: var(--color-primary);
+  border-radius: 1px;
+  margin-bottom: 6px;
 }
 
 .bar_3 {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .sidebar {
-    display: none;
+  display: none;
 }
 
 @media only screen and (max-width: 600px) {
-    .toggle {
-        display: flex;
-    }
-
-    .nav_group {
-        display: none;
-    }
-
-    .sidebar {
-        display: block;
-        position: absolute;
-        width: 200px;
-        height: calc(100vh - 56px);
-        top: 56px;
-        left: -200px;
-        background-color: #282b30;
-        transition: 0.5s;
-        font-size: 18px;
-        /* border-top: 1px solid #888888; */
-    }
-
-    .side_link_group {
-        padding: 1rem 1rem;
-        border-bottom: 1px solid #888888;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        text-decoration: none;
-        color: var(--color-primary);
-        font-weight: 500;
-    }
-
-    .side_link_group:hover {
-        background-color: #ffce3c;
-        color: #282b30;
-    }
-
-    .side_link {
-        /* color: var(--color-primary); */
-    }
-
-    .container {
-        width: 100%;
-        display: flex;
-        padding: 0 0.5rem;
-        justify-content: space-between;
-    }
+  .toggle {
+    display: flex;
+  }
+  .nav_group {
+    display: none;
+  }
+  .sidebar {
+    display: block;
+    position: absolute;
+    width: 200px;
+    height: calc(100vh - 56px);
+    top: 56px;
+    left: -200px;
+    background-color: var(--color-gray-500);
+    transition: 0.5s;
+    font-size: 18px;
+  }
+  .side_link_group {
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #888888;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+  .side_link_group:hover {
+    background-color: #ffce3c;
+    color: var(--color-gray-500);
+  }
+  .container {
+    width: 100%;
+    display: flex;
+    padding: 0 0.5rem;
+    justify-content: space-between;
+  }
 }
-
 @media only screen and (min-width: 1200px) {
-    .container {
-        width: 100%;
-        display: flex;
-        padding: 0 90px;
-        justify-content: space-between;
-    }
+  .container {
+    width: 100%;
+    display: flex;
+    padding: 0 90px;
+    justify-content: space-between;
+  }
 }
+
+/*# sourceMappingURL=Header.module.css.map */

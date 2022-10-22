@@ -1,7 +1,11 @@
-
 import "./Loading.css";
 
-const Loading = (props: any) => {
+type LoadingProps = {
+    error: boolean,
+    message: string
+}
+
+const Loading = ({ error, message }: LoadingProps) => {
     return (
         <div className="screen-container">
             <section className={'section-logo'}>
@@ -12,13 +16,28 @@ const Loading = (props: any) => {
             </section>
 
             <section className="section-info">
-                <div className="info-title">
-                    <h4>Buscando informações do clima, aguarde...</h4>
-                </div>
+                {(!error) ?
+                    <>
+                        <div className="info-title">
+                            <h4>Buscando informações do clima, aguarde...</h4>
+                        </div>
 
-                <div className="info-loader">
-                    <img src="/images/loading-catavento.svg" alt="loader catavento" className="loader-catavento" />
-                </div>
+                        <div className="info-loader">
+                            <img src="/images/loading-catavento.svg" alt="loader catavento" className="loader-catavento" />
+                        </div>
+                    </>
+                    :
+                    <>
+                        <div className="info-title">
+                            <h4>{message}</h4>
+                        </div>
+
+                        <div className="info-error">
+                            <p>Esta cidade que você está pesquisando está fora do nosso banco de dados ou não existe!</p>
+                            <a href="/" className="btn-default">Voltar ao início</a>
+                        </div>
+                    </>
+                }
 
                 <div className="info-subtitle">
                     <p><span className="info-subtitle-tip">Dica:</span> Para uma medição mais rápida e precisa, permita usar sua

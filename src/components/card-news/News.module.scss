@@ -1,0 +1,46 @@
+$colorGray: #ddd;
+$colorLink: dodgerblue;
+
+#cardNews {
+    grid-row: span 3;
+}
+
+.containerNews {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &:not(:last-child) {
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid $colorGray;
+    }
+}
+
+.containerTitle {
+    width: inherit;
+    height: 90px;
+}
+
+.linkNews {
+    color: inherit;
+
+    &:hover {
+        color: $colorLink;
+    }
+}
+
+.titleNews {
+    font-size: 14px;
+    max-height: 90px;
+    margin-bottom: 0;
+    margin-left: 0.75rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media only screen and (max-width: 1000px) {
+    #cardNews {
+        grid-row: 4;
+    }
+}

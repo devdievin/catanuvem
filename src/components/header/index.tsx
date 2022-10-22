@@ -5,11 +5,11 @@ import ModalComponent from '../modal';
 
 import styles from './Header.module.css';
 
-type Props = {
+type HeaderProps = {
     logo: string
 }
 
-const Header = ({ logo }: Props) => {
+const Header = ({ logo }: HeaderProps) => {
     const [sidebarToggle, setSidebarToogle] = useState(false);
     const [modalShow, setModalShow] = useState(false);
 
@@ -23,25 +23,25 @@ const Header = ({ logo }: Props) => {
         });
     });
 
-    const sidebar = (document.querySelector('#sidebarNav') as HTMLDivElement);
-    const openToggle = (document.querySelector('#openToggle') as HTMLDivElement);
-    const closeToggle = (document.querySelector('#closeToggle') as HTMLDivElement);
-
     const toggleSidebar = () => {
         setSidebarToogle(!sidebarToggle);
-        (sidebarToggle) ? closeActions() : openActions();
+        (sidebarToggle) ? closeSidebarActions() : openSidebarActions();
     }
 
-    const closeActions = () => {
-        sidebar.style.left = '-200px';
-        closeToggle.style.display = "none";
-        openToggle.style.display = "block";
+    const autoCloseSidedar = () => {
+        setSidebarToogle(!sidebarToggle);
+        closeSidebarActions();
     }
 
-    const openActions = () => {
-        sidebar.style.left = '0px';
-        openToggle.style.display = "none";
-        closeToggle.style.display = "block";
+    const closeSidebarActions = () => {
+        (document.querySelector('#sidebarNav') as HTMLDivElement).style.left = '-200px';
+        (document.querySelector('#openToggle') as HTMLDivElement).style.display = "block";
+        (document.querySelector('#closeToggle') as HTMLDivElement).style.display = "none";
+    }
+    const openSidebarActions = () => {
+        (document.querySelector('#sidebarNav') as HTMLDivElement).style.left = '0px';
+        (document.querySelector('#openToggle') as HTMLDivElement).style.display = "none";
+        (document.querySelector('#closeToggle') as HTMLDivElement).style.display = "block";
     }
 
     return (
@@ -62,17 +62,17 @@ const Header = ({ logo }: Props) => {
                     <div className={`justify-content-end ${styles.nav_group}`}>
                         <Nav>
                             <button className={`${styles.navLinks} ${styles.navLinkButton}`} onClick={() => setModalShow(true)}>Buscar Cidades</button>
-                            <a href="#help" className={styles.navLinks}>Ajuda</a>
+                            <a href="#ajuda" className={styles.navLinks}>Ajuda</a>
                         </Nav>
                     </div>
 
                     <div className={styles.sidebar} id={'sidebarNav'}>
-                        <button className={`${styles.side_link_group} ${styles.navLinkButton}`} onClick={() => { closeActions(); setModalShow(true) }}>
+                        <button className={`${styles.side_link_group} ${styles.navLinkButton}`} onClick={() => { autoCloseSidedar(); setModalShow(true) }}>
                             <div className={styles.side_link}>
                                 Buscar cidades
                             </div>
                         </button>
-                        <Link to={'#help'} className={styles.side_link_group}>
+                        <Link to={'#ajuda'} className={styles.side_link_group}>
                             <div className={styles.side_link}>
                                 Ajuda
                             </div>

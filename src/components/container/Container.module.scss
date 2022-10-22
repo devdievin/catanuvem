@@ -1,0 +1,26 @@
+$colorLightWhite: #f3f3f3;
+
+.backgroundContainer {
+    width: 100%;
+    height: max-content;
+    background-color: $colorLightWhite;
+}
+
+.container {
+    width: var(--container-width);
+    margin: 0 auto;
+    padding: 2rem 0.5rem;
+}
+
+@media only screen and (max-width: 1000px) {
+    .container {
+        width: 100%;
+        padding: 0.5rem;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .container {
+        width: var(--container-lg-width);
+    }
+}

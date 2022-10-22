@@ -1,9 +1,10 @@
 :root {
-  --color-primary: #fff;
+  --color-primary: #fafafa;
   --navbar-height: 56px;
   --container-width: 1000px;
   --container-lg-width: 1140px;
-  --bs-modal-bg: #0f4c8e;
+  --color-gray-500: #2C2F33;
+  --color-gray-700: #23272A;
 }
 
 /* @font-face {
@@ -87,9 +88,27 @@ body {
 }
 
 .navbar-fill {
-  /* background-color: rgba(0, 0, 0, 0.75); */
-  background-color: #282b30;
+  /* background-color: #282b30; */
+  background-color: var(--color-gray-700);
   transition: all 0.3s ease-in-out;
+}
+
+.btn-default{
+  background-color: rgba(255, 255, 255, 0.25);
+  color: var(--color-primary);
+  border: 2px solid transparent;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  outline: none;
+  font-weight: 600;
+  transition: all 1s linear ease;
+}
+
+.btn-default:hover {
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  font-weight: 600;
 }
 
 .row {

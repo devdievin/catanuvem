@@ -1,0 +1,18 @@
+$colorDarkBlue: #0f4c8e;
+
+.footer {
+    display: flex;
+    background-color: $colorDarkBlue;
+    color: var(--color-primary);
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_text {
+    text-align: center;
+
+    p {
+        margin-bottom: 0;
+    }
+}

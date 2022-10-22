@@ -1,15 +1,17 @@
 .footer {
-    display: flex;
-    background-color: #0f4c8e;
-    color: #fff;
-    padding: 1rem;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  background-color: #0f4c8e;
+  color: var(--color-primary);
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer_text {
-    text-align: center;
+  text-align: center;
 }
 .footer_text p {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
+
+/*# sourceMappingURL=Footer.module.css.map */

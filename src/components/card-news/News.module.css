@@ -1,43 +1,43 @@
 #cardNews {
-    grid-row: span 3;
+  grid-row: span 3;
 }
 
 .containerNews {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
-
 .containerNews:not(:last-child) {
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
 }
 
 .containerTitle {
-    width: inherit;
-    height: 90px;
+  width: inherit;
+  height: 90px;
 }
 
 .linkNews {
-    color: inherit;
+  color: inherit;
 }
-
 .linkNews:hover {
-    color: dodgerblue;
+  color: dodgerblue;
 }
 
 .titleNews {
-    font-size: 14px;
-    max-height: 90px;
-    margin-bottom: 0;
-    margin-left: 0.75rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  font-size: 14px;
+  max-height: 90px;
+  margin-bottom: 0;
+  margin-left: 0.75rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media only screen and (max-width: 1000px) {
-    #cardNews {
-        grid-row: 4;
-    }
+  #cardNews {
+    grid-row: 4;
+  }
 }
+
+/*# sourceMappingURL=News.module.css.map */

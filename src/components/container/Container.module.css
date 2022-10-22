@@ -1,24 +1,25 @@
 .backgroundContainer {
-    width: 100%;
-    height: max-content;
-    background-color: #f3f3f3;
+  width: 100%;
+  height: max-content;
+  background-color: #f3f3f3;
 }
 
 .container {
-    width: var(--container-width);
-    margin: 0 auto;
-    padding: 2rem 0.5rem;
+  width: var(--container-width);
+  margin: 0 auto;
+  padding: 2rem 0.5rem;
 }
 
 @media only screen and (max-width: 1000px) {
-    .container {
-        width: 100%;
-        padding: 0.5rem;
-    }
+  .container {
+    width: 100%;
+    padding: 0.5rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .container {
+    width: var(--container-lg-width);
+  }
 }
 
-@media only screen and (min-width: 1600px) {
-    .container {
-        width: var(--container-lg-width);
-    }
-}
+/*# sourceMappingURL=Container.module.css.map */
