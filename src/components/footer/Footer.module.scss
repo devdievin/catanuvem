@@ -15,4 +15,19 @@ $colorDarkBlue: #0f4c8e;
     p {
         margin-bottom: 0;
     }
+
+    p.madeby {
+        font-size: 14px;
+
+        a {
+            color: inherit;
+            font-weight: 600;
+            text-decoration: none;
+            
+            &:hover{
+                color: var(--color-yellow);
+                text-decoration: underline;
+            }
+        }
+    }
 }

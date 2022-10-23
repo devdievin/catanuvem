@@ -105,6 +105,15 @@
 .madeby-footer {
   font-size: 14px;
 }
+.madeby-footer a {
+  font-weight: 500;
+  color: inherit;
+  text-decoration: none;
+}
+.madeby-footer a:hover {
+  color: var(--color-yellow);
+  text-decoration: underline;
+}
 
 @keyframes rotate {
   from {

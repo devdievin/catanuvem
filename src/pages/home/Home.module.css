@@ -31,6 +31,8 @@
   max-width: 220px;
   width: 100%;
   height: auto;
+  animation: fadeInLeft 1s normal;
+  animation-play-state: paused;
 }
 
 .temperatureText {
@@ -59,6 +61,16 @@
   display: none;
 }
 
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 @media only screen and (max-width: 600px) {
   .mainData {
     padding-top: 1rem;

@@ -1,4 +1,4 @@
-$colorSideHover: #ffce3c;
+$colorSideHover: var(--color-yellow);
 $colorSideItemBorder: #888888;
 
 .logo {
@@ -43,6 +43,7 @@ $colorSideItemBorder: #888888;
     background: transparent;
     border: none;
     width: 100%;
+    outline: none;
 }
 
 .toggle {

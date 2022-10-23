@@ -5,11 +5,7 @@ import ModalComponent from '../modal';
 
 import styles from './Header.module.css';
 
-type HeaderProps = {
-    logo: string
-}
-
-const Header = ({ logo }: HeaderProps) => {
+const Header = (props: any) => {
     const [sidebarToggle, setSidebarToogle] = useState(false);
     const [modalShow, setModalShow] = useState(false);
 
@@ -48,7 +44,7 @@ const Header = ({ logo }: HeaderProps) => {
         <React.Fragment>
             <Navbar fixed="top" id={'navbarFixed'}>
                 <div className={styles.container}>
-                    <Navbar.Brand href="/"><span className={styles.logo}>{logo}</span></Navbar.Brand>
+                    <Navbar.Brand href="/"><span className={styles.logo}>CATANUVEM</span></Navbar.Brand>
                     <div className={styles.toggle} onClick={toggleSidebar}>
                         <div id={'openToggle'}>
                             <div className={styles.bar_1}></div>

@@ -1,3 +1,4 @@
+import { globals } from "../../utils/global_variables";
 import "./Loading.css";
 
 type LoadingProps = {
@@ -47,7 +48,7 @@ const Loading = ({ error, message }: LoadingProps) => {
 
             <section className="section-footer">
                 <p className="copyright-footer">© Catanuvem 2022</p>
-                <p className="madeby-footer">Feito por <strong>Dievin</strong></p>
+                <p className="madeby-footer">Feito por <a href={globals.URL_PORTFOLIO}><strong>Dievin</strong></a></p>
             </section>
         </div>
     );

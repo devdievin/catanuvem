@@ -18,8 +18,6 @@ import Footer from '../../components/footer';
 
 import styles from './Home.module.css';
 
-const URL_NEWS = "https://newsapi.org/v2/top-headlines?country=br&pageSize=7&apiKey=6e50b082a4c64dcc82f46cb34e2f58c8";
-
 const Home = (props: any) => {
   const [isLoading, setIsLoading] = useState(true);
   const [latitude, setLatitude] = useState<number | null>(null);
@@ -43,10 +41,14 @@ const Home = (props: any) => {
         getWeather(latitude, longitude);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [latitude, longitude]);
+
+  useEffect(() => {
     getDatetime();
     getCatanews();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [latitude, longitude]);
+  }, []);
 
   const getGeolocation = () => {
     if (navigator.geolocation) {
@@ -143,18 +145,24 @@ const Home = (props: any) => {
 
   const getCatanews = async () => {
     try {
-      const response = await axios.get(URL_NEWS);
+      const path = (city) ? `${globals.PATH_NEWS}/${city}?limit=7` : `${globals.PATH_NEWS}/brasil?limit=7`;
+      const response = await axios.get(path);
       setNews(response.data);
     } catch (error) {
       console.error("Error", error);
     }
   }
 
+  const animateIcon = (event: any) => {
+    let icon = event.target;
+    icon.style.animationPlayState = 'running';
+  }
+
   return (
     <React.Fragment>
       {!isLoading ?
-        <React.Fragment>
-          <Header logo="CATANUVEM" />
+        <div onLoad={(e) => animateIcon(e)}>
+          <Header />
 
           {weather &&
             <>
@@ -189,7 +197,7 @@ const Home = (props: any) => {
                 <div className={styles.gridContainer}>
                   <CardDetails data={weather} />
 
-                  <CardNews dataNews={news} />
+                  <CardNews dataNews={news} local={(city) ? city : 'Brasil'} />
 
                   {weather &&
                     <CardToday location={weather.location} data={weather.todayForecast} />
@@ -203,7 +211,7 @@ const Home = (props: any) => {
             </>
           }
           <Footer />
-        </React.Fragment>
+        </div>
         :
         <Loading error={cityNotFound} message={'Cidade não encontrada!'} />
       }

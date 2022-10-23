@@ -5,70 +5,8 @@
   --container-lg-width: 1140px;
   --color-gray-500: #2C2F33;
   --color-gray-700: #23272A;
+  --color-yellow: #ffce3c;
 }
-
-/* @font-face {
-  font-family: "Inter";
-  src: url("../public/fonts/Inter/Inter-Black.ttf");
-  font-weight: 900;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("../public/fonts/Inter/Inter-ExtraBold.ttf");
-  font-weight: 800;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("../public/fonts/Inter/Inter-Bold.ttf");
-  font-weight: 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("../public/fonts/Inter/Inter-SemiBold.ttf");
-  font-weight: 600;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("../public/fonts/Inter/Inter-Medium.ttf");
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("../public/fonts/Inter/Inter-Regular.ttf");
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("../public/fonts/Inter/Inter-Light.ttf");
-  font-weight: 300;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("../public/fonts/Inter/Inter-ExtraLight.ttf");
-  font-weight: 200;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("../public/fonts/Inter/Inter-Thin.ttf");
-  font-weight: 100;
-  font-display: swap;
-} */
 
 * {
   margin: 0;
@@ -88,7 +26,6 @@ body {
 }
 
 .navbar-fill {
-  /* background-color: #282b30; */
   background-color: var(--color-gray-700);
   transition: all 0.3s ease-in-out;
 }

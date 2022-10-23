@@ -30,13 +30,14 @@
   margin-right: 10px;
 }
 .navLinks:hover {
-  color: #ffce3c;
+  color: var(--color-yellow);
 }
 
 .navLinkButton {
   background: transparent;
   border: none;
   width: 100%;
+  outline: none;
 }
 
 .toggle {
@@ -99,7 +100,7 @@
     font-weight: 500;
   }
   .side_link_group:hover {
-    background-color: #ffce3c;
+    background-color: var(--color-yellow);
     color: var(--color-gray-500);
   }
   .container {

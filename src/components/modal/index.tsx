@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import styles from './Modal.module.css';
 import { Modal } from 'react-bootstrap';
-
-const URL_API = 'https://api-catanuvem.vercel.app/city';
+import { globals } from '../../utils/global_variables';
 
 const ModalComponent = (props: any) => {
     const [cityName, setCityName] = useState("");
@@ -12,7 +11,7 @@ const ModalComponent = (props: any) => {
 
     useEffect(() => {
         if (cityName !== "") {
-            axios.get(`${URL_API}/${cityName}`)
+            axios.get(`${globals.PATH_GET_CITY}/${cityName}`)
                 .then(response => {
                     if (response.data.length > 0) {
                         setCities({ status: 200, data: response.data });
@@ -37,33 +36,15 @@ const ModalComponent = (props: any) => {
         localStorage.setItem(`city${cityCount}`, JSON.stringify({ name, state }));
     }
 
-    // const getCitiesSearched = () => {
-    //     let values = [];
-    //     let keys = Object.keys(localStorage);
-    //     let i = keys.length;
-
-    //     while (i--) {
-    //         values.push(localStorage.getItem(keys[i]));
-    //     }
-
-    //     return values;
-    // }
-
-    // const allKeys = getCitiesSearched();
-
-    // const clearLocalStorage = () => { localStorage.clear(); }
-
     const closeModal = () => {
         setCityName("");
         setCities(null);
         props.onHide();
     }
 
-    const test = (value: any) => {
+    const checkInputEmpty = (value: any) => {
         if (value === '') {
             setCities(null);
-            console.log("Está vazio");
-
         }
     }
 
@@ -79,23 +60,10 @@ const ModalComponent = (props: any) => {
                         Buscar Cidades
                         <img src="/icons/icon-close.svg" alt="fechar modal" width={22} height={22} onClick={closeModal} />
                     </Modal.Title>
-                    {/* <section className={styles.modalRecents}>
-                        <h3>Recentes:</h3>
-                        <div className={styles.citiesRecents}>
-                            <div>
-                                {allKeys.map((key: any, index: number) => {
-                                    return <p key={index}>{JSON.parse(key).name}, {JSON.parse(key).state}</p>
-                                })}
-                            </div>
-                            <div>
-                                <img src="/icons/icon-trash.svg" alt="excluir histórico" width={28} height={28} onClick={clearLocalStorage} />
-                            </div>
-                        </div>
-                    </section> */}
                 </div>
                 <section className={styles.modalSearch}>
                     <div className={styles.modalInputGroup}>
-                        <input type="text" placeholder='Exemplo: Brasília, DF' onChange={(e) => { setCityName(e.target.value); test(e.target.value) }} onKeyDown={resetInput} value={cityName} />
+                        <input type="text" placeholder='Exemplo: Brasília, DF' onChange={(e) => { setCityName(e.target.value); checkInputEmpty(e.target.value) }} onKeyDown={resetInput} value={cityName} />
                         <img src="/icons/icon-search.svg" alt="ícone pesquisar cidade" width={24} height={24} className={styles.modalInputIcon} />
                     </div>
 

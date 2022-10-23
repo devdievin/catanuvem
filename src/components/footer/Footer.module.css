@@ -13,5 +13,17 @@
 .footer_text p {
   margin-bottom: 0;
 }
+.footer_text p.madeby {
+  font-size: 14px;
+}
+.footer_text p.madeby a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: none;
+}
+.footer_text p.madeby a:hover {
+  color: var(--color-yellow);
+  text-decoration: underline;
+}
 
 /*# sourceMappingURL=Footer.module.css.map */
