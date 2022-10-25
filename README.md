@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# Catanuvem ☁️
+> Projeto construído com React JS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicação Web para previsão do tempo simples e precisa. Várias informações metereológicas para qualquer lugar do Brasil.
 
-## Available Scripts
+Veja a aplicação em funcionamento aqui: https://catanuvem.vercel.app
 
-In the project directory, you can run:
+![Página Inicial](./public/images/screenshoots/screenshot1.png "Catanuvem página inicial")
 
-### `npm start`
+## Sobre
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Catanuvem é uma aplicação web para previsão climática. Consumindo dados de uma api própria de mesmo nome ([Api Catanuvem](https://github.com/DievanoD/api-catanuvem)). Esse projeto tem como objetivo solidificar e expandir conhecimentos em desenvolvimento web.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Features
 
-### `npm test`
+- Geolocalização
+- Pesquisar clima pelo nome da cidade
+- Mais de 5560 municípios brasileiros disponíveis para pesquisa
+- Detalhes do clima para hoje, próximas horas e dias
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Como utilizar?
 
-### `npm run build`
+Permita o navegador utilizar sua localização para uma medição mais simples e precisa. Assim a aplicação pegará suas coordenadas e exibirá o clima mais perto de você.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Caso a permissão de usar sua localização seja negada, o app buscará a previsão climática da cidade padrão, que é Brasília, Distrito Federal.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Você também pode buscar pelos nomes das cidades para encontrar a cidade que deseja. São mais de 5560 municípios brasileiros disponíveis para pesquisa.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img src="./public/images/screenshoots/screenshot2.png" alt="screen página inicial mobile" title="Página inicial mobile" width=" 250px" height="auto">
+<img src="./public/images/screenshoots/screenshot3.png" alt="screen buscar cidades" title="Buscar cidades mobile" width=" 250px" height="auto">
 
-### `npm run eject`
+Projeto inspirado no The Weather Channel.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Tecnologias
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Projeto foi construído com as seguintes tecnologias:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Typescript
+- React JS
+- React-bootstrap
+- Sass
