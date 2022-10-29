@@ -5,7 +5,7 @@ Aplicação Web para previsão do tempo simples e precisa. Várias informações
 
 Veja a aplicação em funcionamento aqui: https://catanuvem.vercel.app
 
-![Página Inicial](./public/images/screenshoots/screenshot1.png "Catanuvem página inicial")
+![Página Inicial](./public/images/screenshoots/screen0.svg "Catanuvem página inicial")
 
 ## Sobre
 
@@ -26,8 +26,7 @@ Caso a permissão de usar sua localização seja negada, o app buscará a previs
 
 Você também pode buscar pelos nomes das cidades para encontrar a cidade que deseja. São mais de 5560 municípios brasileiros disponíveis para pesquisa.
 
-<img src="./public/images/screenshoots/screenshot2.png" alt="screen página inicial mobile" title="Página inicial mobile" width=" 250px" height="auto">
-<img src="./public/images/screenshoots/screenshot3.png" alt="screen buscar cidades" title="Buscar cidades mobile" width=" 250px" height="auto">
+![Telas Catanuvem](public/images/screenshoots/screens.svg "Telas Catanuvem")
 
 Projeto inspirado no The Weather Channel.
 
