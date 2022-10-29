@@ -23,15 +23,16 @@
     padding-top: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #e3e3e3;
-}
 
-@media only screen and (max-width: 600px) {
-    .itemWrapper span:last-child{
-        max-width: 20ch;
+    span:last-child {
+        max-width: 18ch;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
     }
+}
+
+@media only screen and (max-width: 600px) {
 }
 
 @media only screen and (max-width: 767px) {

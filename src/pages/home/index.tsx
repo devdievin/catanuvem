@@ -145,7 +145,7 @@ const Home = (props: any) => {
 
   const getCatanews = async () => {
     try {
-      const path = (city) ? `${globals.PATH_NEWS}/${city}?limit=7` : `${globals.PATH_NEWS}/brasil?limit=7`;
+      const path = (city) ? `${globals.PATH_NEWS}/${city}?limit=6` : `${globals.PATH_NEWS}/brasil?limit=6`;
       const response = await axios.get(path);
       setNews(response.data);
     } catch (error) {
