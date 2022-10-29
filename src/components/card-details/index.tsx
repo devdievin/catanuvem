@@ -59,7 +59,7 @@ const CardDetails = ({ data }: any) => {
                     <Col xs={12} md={6} className={`${styles.cardItemCol}`}>
                         <div className={styles.itemWrapper}>
                             <span >Sensação térmica:</span>
-                            <span>{data.thermalSensation}</span>
+                            <span>{data.feelsLike}</span>
                         </div>
                     </Col>
                     <Col xs={12} md={6} className={`${styles.cardItemCol}`}>

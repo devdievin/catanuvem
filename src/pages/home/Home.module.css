@@ -91,6 +91,10 @@
   }
   .conditionText {
     font-size: 1.25rem;
+    max-width: 14ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .helpLabel {
     display: flex;

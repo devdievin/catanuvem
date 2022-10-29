@@ -32,7 +32,7 @@
     width: 100%;
     height: auto;
     animation: fadeInLeft 1s normal;
-    animation-play-state: paused
+    animation-play-state: paused;
 }
 
 .temperatureText {
@@ -98,6 +98,10 @@
 
     .conditionText {
         font-size: 1.25rem;
+        max-width: 14ch;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     .helpLabel {

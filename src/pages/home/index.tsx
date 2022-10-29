@@ -175,7 +175,7 @@ const Home = (props: any) => {
                   </div>
 
                   <div className={styles.iconContent}>
-                    <img src={weather.icon.src} alt={weather.icon.name} title={weather.icon.name} className={styles.iconWeather} />
+                    <img src={weather.icon.src} alt={weather.icon.name} title={weather.icon.name} className={styles.iconWeather} referrerPolicy={"no-referrer"} />
                   </div>
 
                   <div className={styles.temperatureContent}>

@@ -26,6 +26,12 @@
 }
 
 @media only screen and (max-width: 600px) {
+    .itemWrapper span:last-child{
+        max-width: 20ch;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 }
 
 @media only screen and (max-width: 767px) {

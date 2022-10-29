@@ -1,6 +1,7 @@
 .sectionMain {
   height: 100vh;
-  background-image: url("../../../public/images/sky-1.jpg");
+  background-color: #A0EDFD;
+  background-image: linear-gradient(0deg, #a0edfd -10%, #0278fe 80%);
   background-size: cover;
   background-position: center;
   object-fit: cover;

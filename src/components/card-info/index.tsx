@@ -42,7 +42,7 @@ const CardInfo = ({ data }: any) => {
                             <img src="/icons/icon-temperature-feels-like.svg" alt="ícone sensação térmica" title={'Sensação térmica'} width={35} height={35} />
                         </div>
                         <p className={styles.infoLabel}>Sensação térmica</p>
-                        <p>{data.thermalSensation}</p>
+                        <p>{data.feelsLike}</p>
                     </div>
                 </Col>
             </Row>
