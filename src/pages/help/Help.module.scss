@@ -1,13 +1,59 @@
-.containerImg {
-    width: inherit;
-    height: inherit;
+$cardBgColor: #fafafa;
+$cardTextColor: #0f0f0f;
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 3rem;
 }
 
-.iconWeather {
-    max-width: 220px;
+.cardHelp {
+    max-width: 600px;
     width: 100%;
-    height: auto;
+    background-color: $cardBgColor;
+    border-radius: 10px;
+    padding: 1.25rem;
+    color: $cardTextColor;
+
+    h3,
+    p {
+        margin-bottom: 2rem;
+    }
+
+    h3 {
+        font-weight: 600;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        padding-top: 1.5rem;
+    }
+
+    .cardHelp {
+        padding: 0.75rem;
+
+        h3,
+        p {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .container {
+        padding-top: 5rem;
+    }
+
+    .cardHelp {
+        max-width: 800px;
+
+        h3 {
+            font-size: 36px;
+        }
+        p {
+            font-size: 20px;
+        }
+    }
 }

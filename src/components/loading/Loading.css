@@ -1,26 +1,10 @@
 .screen-container {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - var(--navbar-height));
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: #A0EDFD;
-  background-image: linear-gradient(0deg, #a0edfd -10%, #0278fe 80%);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.screen-container::before {
-  content: "";
-  position: absolute;
-  height: 100vh;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  z-index: 0;
-  background-color: rgba(0, 0, 0, 0.35);
 }
 
 .section-logo {
@@ -122,14 +106,6 @@
   }
   to {
     transform: rotate(360deg);
-  }
-}
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.95);
   }
 }
 @media only screen and (max-width: 600px) {

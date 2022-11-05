@@ -15,6 +15,7 @@ import CardNews from '../../components/card-news';
 import CardInfo from '../../components/card-info';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
+import SectionBackgroundMain from '../../components/background-main';
 
 import styles from './Home.module.css';
 
@@ -166,32 +167,34 @@ const Home = (props: any) => {
 
           {weather &&
             <>
-              <SectionMain>
-                {/* Dados principais */}
-                <div className={styles.mainData}>
-                  <div className={styles.titleContent}>
-                    <h1 className={styles.locationText}>{weather.location}</h1>
-                    <h3 className={styles.dateText}>{dayAndMonth}, <span className={styles.dateStrong}>{dayOfWeek}</span></h3>
+              <SectionBackgroundMain>
+                <SectionMain screenType='fullscreen'>
+                  {/* Dados principais */}
+                  <div className={styles.mainData}>
+                    <div className={styles.titleContent}>
+                      <h1 className={styles.locationText}>{weather.location}</h1>
+                      <h3 className={styles.dateText}>{dayAndMonth}, <span className={styles.dateStrong}>{dayOfWeek}</span></h3>
+                    </div>
+
+                    <div className={styles.iconContent}>
+                      <img src={weather.icon.src} alt={weather.icon.name} title={weather.icon.name} className={styles.iconWeather} referrerPolicy={"no-referrer"} />
+                    </div>
+
+                    <div className={styles.temperatureContent}>
+                      <h3 className={styles.temperatureText}>{weather.temperature}</h3>
+                      <h4 className={styles.conditionText}>{weather.condition}</h4>
+                    </div>
                   </div>
 
-                  <div className={styles.iconContent}>
-                    <img src={weather.icon.src} alt={weather.icon.name} title={weather.icon.name} className={styles.iconWeather} referrerPolicy={"no-referrer"} />
+                  {/* Card info */}
+                  <CardInfo data={weather} />
+
+                  {weatherHours && <CardHours data={weatherHours.hoursForecast} />}
+                  <div className={styles.helpLabel}>
+                    <span>&larr; Arrasta &rarr;</span>
                   </div>
-
-                  <div className={styles.temperatureContent}>
-                    <h3 className={styles.temperatureText}>{weather.temperature}</h3>
-                    <h4 className={styles.conditionText}>{weather.condition}</h4>
-                  </div>
-                </div>
-
-                {/* Card info */}
-                <CardInfo data={weather} />
-
-                {weatherHours && <CardHours data={weatherHours.hoursForecast} />}
-                <div className={styles.helpLabel}>
-                  <span>&larr; Arrasta &rarr;</span>
-                </div>
-              </SectionMain>
+                </SectionMain>
+              </SectionBackgroundMain>
 
               <ContainerCustom>
                 <div className={styles.gridContainer}>
@@ -210,7 +213,7 @@ const Home = (props: any) => {
               </ContainerCustom>
             </>
           }
-          <Footer />
+          <Footer background='colorful' />
         </div>
         :
         <Loading error={cityNotFound} message={'Cidade não encontrada!'} />

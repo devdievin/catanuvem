@@ -58,7 +58,7 @@ const Header = (props: any) => {
                     <div className={`justify-content-end ${styles.nav_group}`}>
                         <Nav>
                             <button className={`${styles.navLinks} ${styles.navLinkButton}`} onClick={() => setModalShow(true)}>Buscar Cidades</button>
-                            <a href="#ajuda" className={styles.navLinks}>Ajuda</a>
+                            <a href="/ajuda" className={styles.navLinks}>Ajuda</a>
                         </Nav>
                     </div>
 
@@ -68,7 +68,7 @@ const Header = (props: any) => {
                                 Buscar cidades
                             </div>
                         </button>
-                        <Link to={'#ajuda'} className={styles.side_link_group}>
+                        <Link to={'/ajuda'} className={styles.side_link_group} onClick={autoCloseSidedar}>
                             <div className={styles.side_link}>
                                 Ajuda
                             </div>

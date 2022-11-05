@@ -2,11 +2,21 @@ $colorDarkBlue: #0f4c8e;
 
 .footer {
     display: flex;
-    background-color: $colorDarkBlue;
-    color: var(--color-primary);
     padding: 1rem;
     justify-content: center;
     align-items: center;
+}
+
+.footerTransparent {
+    position: relative;
+    top: var(--navbar-height);
+    background-color: transparent;
+    color: inherit;
+}
+
+.footerColorful {
+    background-color: $colorDarkBlue;
+    color: var(--color-primary);
 }
 
 .footer_text {
@@ -23,8 +33,8 @@ $colorDarkBlue: #0f4c8e;
             color: inherit;
             font-weight: 600;
             text-decoration: none;
-            
-            &:hover{
+
+            &:hover {
                 color: var(--color-yellow);
                 text-decoration: underline;
             }

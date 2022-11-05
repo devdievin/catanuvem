@@ -1,15 +1,51 @@
-.containerImg {
-  width: inherit;
-  height: inherit;
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 3rem;
 }
 
-.iconWeather {
-  max-width: 220px;
+.cardHelp {
+  max-width: 600px;
   width: 100%;
-  height: auto;
+  background-color: #fafafa;
+  border-radius: 10px;
+  padding: 1.25rem;
+  color: #0f0f0f;
+}
+.cardHelp h3,
+.cardHelp p {
+  margin-bottom: 2rem;
+}
+.cardHelp h3 {
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    padding-top: 1.5rem;
+  }
+  .cardHelp {
+    padding: 0.75rem;
+  }
+  .cardHelp h3,
+.cardHelp p {
+    margin-bottom: 1rem;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .container {
+    padding-top: 5rem;
+  }
+  .cardHelp {
+    max-width: 800px;
+  }
+  .cardHelp h3 {
+    font-size: 36px;
+  }
+  .cardHelp p {
+    font-size: 20px;
+  }
 }
 
 /*# sourceMappingURL=Help.module.css.map */

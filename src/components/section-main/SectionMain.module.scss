@@ -1,43 +1,31 @@
-.sectionMain {
-    height: 100vh;
-    background-color: #A0EDFD;
-    background-image: linear-gradient(0deg, #a0edfd -10%, #0278fe 80%);
-    background-size: cover;
-    background-position: center;
-    object-fit: cover;
-    background-repeat: no-repeat;
-    color: var(--color-primary);
-
-    &::before {
-        content: "";
-        position: absolute;
-        height: 100vh;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        background-color: rgba(0, 0, 0, 0.35);
-    }
-}
-
-.contentMain {
+.contentFullscreen,
+.contentFilledScreen {
     width: var(--container-width);
     margin: auto;
     position: relative;
-    height: calc(100vh - var(--navbar-height));
     top: var(--navbar-height);
     padding: 0.5rem;
 }
 
+.contentFullscreen {
+    height: calc(100vh - var(--navbar-height));
+}
+
+.contentFilledScreen {
+    height: calc(100vh - (var(--navbar-height) + var(--footer-height)));
+}
+
 @media only screen and (max-width: 1000px) {
-    .contentMain {
+    .contentFullscreen,
+    .contentFilledScreen {
         width: 100%;
         padding: 0.5rem;
     }
 }
 
 @media only screen and (min-width: 1600px) {
-    .contentMain {
+    .contentFullscreen,
+    .contentFilledScreen {
         width: var(--container-lg-width);
     }
 }

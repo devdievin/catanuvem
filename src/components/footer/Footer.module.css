@@ -1,10 +1,20 @@
 .footer {
   display: flex;
-  background-color: #0f4c8e;
-  color: var(--color-primary);
   padding: 1rem;
   justify-content: center;
   align-items: center;
+}
+
+.footerTransparent {
+  position: relative;
+  top: var(--navbar-height);
+  background-color: transparent;
+  color: inherit;
+}
+
+.footerColorful {
+  background-color: #0f4c8e;
+  color: var(--color-primary);
 }
 
 .footer_text {

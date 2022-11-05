@@ -1,0 +1,17 @@
+.bgMain {
+  height: 100vh;
+  background: linear-gradient(180deg, #0078FF 25%, #1FA6FD 75%, #B9F3FF 100%);
+  color: var(--color-primary);
+}
+.bgMain::before {
+  content: "";
+  position: absolute;
+  height: 100vh;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/*# sourceMappingURL=Background.module.css.map */
