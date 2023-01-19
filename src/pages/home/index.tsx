@@ -53,7 +53,8 @@ const Home = (props: any) => {
 
   const getGeolocation = () => {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition, errorPosition);
+      const options = { maximumAge: 60000, timeout: 10000, enableHighAccuracy: true };
+      navigator.geolocation.getCurrentPosition(showPosition, errorPosition, options);
     } else {
       alert("Geolocation is not supported by this browser.");
       setDefaultCoordinates();
@@ -66,9 +67,7 @@ const Home = (props: any) => {
   };
 
   const errorPosition = (error: any) => {
-    if (error.code === error.PERMISSION_DENIED) {
-      setDefaultCoordinates();
-    }
+    setDefaultCoordinates();
   }
 
   // set default coordinates to Brasília city
